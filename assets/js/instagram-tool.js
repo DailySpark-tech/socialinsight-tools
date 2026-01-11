@@ -51,21 +51,44 @@ checkBtn.addEventListener("click", () => {
 function showResult(username) {
   loadingBox.classList.add("hidden");
 
-  const interactionScore = Math.floor(Math.random() * 40) + 60;
+  const interactionScore = Math.floor(Math.random() * 35) + 55;
   const engagementLevel =
     interactionScore > 80 ? "High" :
     interactionScore > 65 ? "Moderate" :
     "Low";
 
+  const activityIndex = Math.floor(Math.random() * 30) + 70;
+  const reachIndex = Math.floor(Math.random() * 25) + 65;
+
   resultBox.innerHTML = `
     <h3>Interaction Overview for @${username}</h3>
-    <p><strong>Estimated Interaction Score:</strong> ${interactionScore}%</p>
-    <p><strong>Engagement Level:</strong> ${engagementLevel}</p>
-    <p>
-      This estimation is based on public behavior patterns such as
-      posting frequency, visible reactions, and engagement trends.
+
+    <div class="metric">
+      <span>Interaction Score</span>
+      <strong>${interactionScore}%</strong>
+    </div>
+
+    <div class="metric">
+      <span>Engagement Level</span>
+      <strong>${engagementLevel}</strong>
+    </div>
+
+    <div class="metric">
+      <span>Activity Index</span>
+      <strong>${activityIndex}%</strong>
+    </div>
+
+    <div class="metric">
+      <span>Reach Signal</span>
+      <strong>${reachIndex}%</strong>
+    </div>
+
+    <p class="result-note">
+      These insights are estimation-based and derived from publicly observable
+      interaction patterns, posting behavior, and engagement trends.
     </p>
   `;
 
   resultBox.classList.remove("hidden");
 }
+
