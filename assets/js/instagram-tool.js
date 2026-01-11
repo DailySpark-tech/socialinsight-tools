@@ -32,21 +32,42 @@ checkBtn.addEventListener("click", () => {
     return;
   }
 
-  loadingBox.classList.remove("hidden");
+loadingBox.classList.remove("hidden");
 
-  let step = 0;
-  loadingText.textContent = loadingSteps[step];
+const loadingSteps = [
+  "Connecting to public data sources…",
+  "Analyzing profile activity signals…",
+  "Evaluating interaction patterns…",
+  "Estimating engagement metrics…",
+  "Finalizing results…"
+];
 
-  const interval = setInterval(() => {
-    step++;
-    if (step < loadingSteps.length) {
-      loadingText.textContent = loadingSteps[step];
-    } else {
-      clearInterval(interval);
-      showResult(username);
-    }
-  }, 900);
-});
+let step = 0;
+loadingText.textContent = loadingSteps[step];
+
+const stepInterval = setInterval(() => {
+  step++;
+  if (step < loadingSteps.length) {
+    loadingText.textContent = loadingSteps[step];
+  }
+}, 1400); // change speed here
+const progressFill = document.getElementById("progressFill");
+let progress = 0;
+
+const progressInterval = setInterval(() => {
+  if (progress < 95) {
+    progress += Math.random() * 8;
+    progressFill.style.width = Math.min(progress, 95) + "%";
+  }
+}, 700);
+
+setTimeout(() => {
+  clearInterval(stepInterval);
+  clearInterval(progressInterval);
+progressFill.style.width = "100%";
+  showResult(username);
+}, 7500); // total processing time (7.5 seconds)
+
 
 function showResult(username) {
   loadingBox.classList.add("hidden");
