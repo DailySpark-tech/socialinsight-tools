@@ -22,25 +22,23 @@
     </p>
 
     <div class="tool-box">
-      <label for="ig-username">Instagram Username</label>
-      <input
-        type="text"
-        id="ig-username"
-        placeholder="e.g. cristiano"
-        autocomplete="off"
-      />
-      <button id="check-btn">Check Interaction</button>
-    </div>
+  <input
+    type="text"
+    id="usernameInput"
+    placeholder="Enter Instagram username"
+  />
+  <button id="checkBtn">Check Interaction</button>
 
-    <div id="loading" class="loading-box hidden">
-      <p id="loading-text">Initializing analysis…</p>
-    </div>
+  <div id="loadingBox" class="loading-box hidden">
+    <p id="loadingText">Initializing analysis…</p>
     <div class="progress-bar">
-  <div class="progress-fill" id="progressFill"></div>
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <div id="resultBox" class="result-box hidden"></div>
 </div>
 
-
-    <div id="result" class="result-box hidden"></div>
 
     <p class="tool-disclaimer">
       This tool provides estimation-based insights using publicly observable patterns.
