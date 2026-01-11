@@ -1,17 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const loadPartial = (id, file) => {
-    const el = document.getElementById(id);
-    if (!el) return;
+document.addEventListener("DOMContentLoaded", function () {
 
-    fetch(file)
-      .then(r => {
-        if (!r.ok) throw new Error(file + " not found");
-        return r.text();
+  function loadPartial(targetId, filePath) {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    fetch(filePath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Failed to load " + filePath);
+        }
+        return response.text();
       })
-      .then(html => el.innerHTML = html)
-      .catch(err => console.error(err));
-  };
+      .then(html => {
+        target.innerHTML = html;
+      })
+      .catch(error => {
+        console.error(error.message);
+      });
+  }
 
   loadPartial("header", "assets/partials/header.html");
   loadPartial("footer", "assets/partials/footer.html");
+
 });
