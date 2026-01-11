@@ -277,5 +277,7 @@ nav a:hover {
   opacity: 1;
   transform: translateY(0);
 }
-
+.result-box {
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
 
