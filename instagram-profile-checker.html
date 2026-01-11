@@ -9,16 +9,45 @@
 
 <body>
 
-<div id="header"></div>
+  <div id="header"></div>
 
-<main class="container">
-  <h1>Instagram Profile Interaction Checker</h1>
-  <p>Tool coming soon.</p>
-</main>
+  <main class="tool-container">
 
-<div id="footer"></div>
+    <h1>Instagram Profile Interaction Checker</h1>
+    <p class="tool-intro">
+      Estimate interaction signals and engagement patterns for public Instagram profiles.
+      No login required.
+    </p>
 
-<script src="assets/js/main.js"></script>
-  
+    <div class="tool-box">
+      <label for="ig-username">Instagram Username</label>
+      <input
+        type="text"
+        id="ig-username"
+        placeholder="e.g. cristiano"
+        autocomplete="off"
+      />
+      <button id="check-btn">Check Interaction</button>
+    </div>
+
+    <div id="loading" class="loading-box hidden">
+      <p id="loading-text">Initializing analysis…</p>
+    </div>
+
+    <div id="result" class="result-box hidden"></div>
+
+    <p class="tool-disclaimer">
+      This tool provides estimation-based insights using publicly observable patterns.
+      It is not affiliated with or endorsed by Instagram or Meta.
+    </p>
+
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/instagram-tool.js"></script>
+
 </body>
+
 </html>
