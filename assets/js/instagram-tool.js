@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   checkBtn.addEventListener("click", () => {
     const username = usernameInput.value.trim().toLowerCase();
+usernameInput.value = username;
 
     if (!/^[a-zA-Z0-9._]{1,30}$/.test(username)) {
       alert("Please enter a valid Instagram username.");
