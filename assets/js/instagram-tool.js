@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const usernameInput = document.getElementById("usernameInput");
   const checkBtn = document.getElementById("checkBtn");
+  
+  usernameInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !checkBtn.disabled) {
+    checkBtn.click();
+  }
+});
+  
   const loadingBox = document.getElementById("loadingBox");
   const loadingText = document.getElementById("loadingText");
   const progressFill = document.getElementById("progressFill");
@@ -14,6 +21,7 @@ usernameInput.value = username;
       alert("Please enter a valid Instagram username.");
       return;
     }
+    
     checkBtn.disabled = true;
 
     // Reset UI
