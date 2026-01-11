@@ -53,16 +53,25 @@ const progressInterval = setInterval(() => {
 
 
     setTimeout(() => {
-      clearInterval(stepInterval);
-      clearInterval(progressInterval);
-      progressFill.style.width = "100%";
-      loadingBox.classList.add("hidden");
 
-      showResult(username);
+  clearInterval(stepInterval);
+  clearInterval(progressInterval);
 
-      checkBtn.disabled = false;
-      usernameInput.disabled = false;
-    }, 7500);
+  // Step 1: force progress to 100%
+  progressFill.style.width = "100%";
+
+  // Step 2: allow browser to paint 100%
+  setTimeout(() => {
+
+    loadingBox.classList.add("hidden");
+    showResult(username);
+
+    checkBtn.disabled = false;
+    usernameInput.disabled = false;
+
+  }, 350); // safe visual delay
+
+}, 7500);
   });
 
 
