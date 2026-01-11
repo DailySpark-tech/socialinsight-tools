@@ -41,28 +41,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1400);
 
     let progress = 0;
+const totalDuration = 8000; // total analysis time
+const intervalTime = 100;   // progress update speed
+const increment = 100 / (totalDuration / intervalTime);
+
 const progressInterval = setInterval(() => {
-  progress += Math.random() * 6 + 4; // steady growth
-  if (progress >= 95) {
-    progress = 95;
+  progress += increment;
+  if (progress >= 100) {
+    progress = 100;
     clearInterval(progressInterval);
-  }
-  progressFill.style.width = progress + "%";
-}, 700);
 
-
+    // Give browser time to paint 100%
     setTimeout(() => {
-      clearInterval(stepInterval);
-      clearInterval(progressInterval);
-      progressFill.style.width = "100%";
       loadingBox.classList.add("hidden");
-
       showResult(username);
-
       checkBtn.disabled = false;
       usernameInput.disabled = false;
-    }, 7500);
-  });
+    }, 400);
+  }
+  progressFill.style.width = progress + "%";
+}, intervalTime);
+
 
   function showResult(username) {
     const interactionScore = Math.floor(Math.random() * 35) + 55;
