@@ -226,6 +226,31 @@ nav a:hover {
   color: #666;
   margin-top: 40px;
 }
+.metric {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e6edff;
+  font-size: 0.95rem;
+}
+
+.metric:last-child {
+  border-bottom: none;
+}
+
+.metric span {
+  color: #555;
+}
+
+.metric strong {
+  color: #1f3c88;
+}
+
+.result-note {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #666;
+}
 
 
 
