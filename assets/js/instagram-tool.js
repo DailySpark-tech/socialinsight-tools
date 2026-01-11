@@ -14,6 +14,7 @@ usernameInput.value = username;
       alert("Please enter a valid Instagram username.");
       return;
     }
+    checkBtn.disabled = true;
 
     // Reset UI
     resultBox.classList.add("hidden");
