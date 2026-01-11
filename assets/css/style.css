@@ -267,7 +267,7 @@ nav a:hover {
   transition: width 0.6s ease;
 }
 #usernameInput {
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 
 
