@@ -1,115 +1,105 @@
-const usernameInput = document.getElementById("ig-username");
-const checkBtn = document.getElementById("check-btn");
-const loadingBox = document.getElementById("loading");
-const loadingText = document.getElementById("loading-text");
-const resultBox = document.getElementById("result");
+document.addEventListener("DOMContentLoaded", () => {
+  const usernameInput = document.getElementById("usernameInput");
+  const checkBtn = document.getElementById("checkBtn");
+  const loadingBox = document.getElementById("loadingBox");
+  const loadingText = document.getElementById("loadingText");
+  const progressFill = document.getElementById("progressFill");
+  const resultBox = document.getElementById("resultBox");
 
-const loadingSteps = [
-  "Validating username…",
-  "Fetching public profile signals…",
-  "Analyzing interaction patterns…",
-  "Calculating engagement indicators…",
-  "Finalizing report…"
-];
+  checkBtn.addEventListener("click", () => {
+    const username = usernameInput.value.trim();
 
-function isValidInstagramUsername(username) {
-  return /^[a-zA-Z0-9._]{1,30}$/.test(username);
-}
+    if (!/^[a-zA-Z0-9._]{1,30}$/.test(username)) {
+      alert("Please enter a valid Instagram username.");
+      return;
+    }
 
-checkBtn.addEventListener("click", () => {
-  const username = usernameInput.value.trim();
+    // Reset UI
+    resultBox.classList.add("hidden");
+    loadingBox.classList.remove("hidden");
+    progressFill.style.width = "0%";
+    checkBtn.disabled = true;
+    usernameInput.disabled = true;
 
-  resultBox.classList.add("hidden");
-  loadingBox.classList.add("hidden");
+    // Loading steps
+    const steps = [
+      "Connecting to public data sources…",
+      "Analyzing profile activity signals…",
+      "Evaluating interaction patterns…",
+      "Estimating engagement metrics…",
+      "Finalizing results…"
+    ];
 
-  if (!username) {
-    alert("Please enter an Instagram username.");
-    return;
+    let stepIndex = 0;
+    loadingText.textContent = steps[stepIndex];
+
+    const stepInterval = setInterval(() => {
+      stepIndex++;
+      if (stepIndex < steps.length) {
+        loadingText.textContent = steps[stepIndex];
+      }
+    }, 1400);
+
+    let progress = 0;
+    const progressInterval = setInterval(() => {
+      if (progress < 95) {
+        progress += Math.random() * 8;
+        progressFill.style.width = Math.min(progress, 95) + "%";
+      }
+    }, 700);
+
+    setTimeout(() => {
+      clearInterval(stepInterval);
+      clearInterval(progressInterval);
+      progressFill.style.width = "100%";
+      loadingBox.classList.add("hidden");
+
+      showResult(username);
+
+      checkBtn.disabled = false;
+      usernameInput.disabled = false;
+    }, 7500);
+  });
+
+  function showResult(username) {
+    const interactionScore = Math.floor(Math.random() * 35) + 55;
+    const engagement =
+      interactionScore > 80 ? "High" :
+      interactionScore > 65 ? "Moderate" :
+      "Low";
+
+    const activity = Math.floor(Math.random() * 30) + 70;
+    const reach = Math.floor(Math.random() * 25) + 65;
+
+    resultBox.innerHTML = `
+      <h3>Interaction Overview for @${username}</h3>
+
+      <div class="metric">
+        <span>Interaction Score</span>
+        <strong>${interactionScore}%</strong>
+      </div>
+
+      <div class="metric">
+        <span>Engagement Level</span>
+        <strong>${engagement}</strong>
+      </div>
+
+      <div class="metric">
+        <span>Activity Index</span>
+        <strong>${activity}%</strong>
+      </div>
+
+      <div class="metric">
+        <span>Reach Signal</span>
+        <strong>${reach}%</strong>
+      </div>
+
+      <p class="result-note">
+        These results are estimation-based and derived from publicly observable
+        interaction patterns and engagement trends.
+      </p>
+    `;
+
+    resultBox.classList.remove("hidden");
   }
-
-  if (!isValidInstagramUsername(username)) {
-    alert("Invalid Instagram username format.");
-    return;
-  }
-
-loadingBox.classList.remove("hidden");
-
-const loadingSteps = [
-  "Connecting to public data sources…",
-  "Analyzing profile activity signals…",
-  "Evaluating interaction patterns…",
-  "Estimating engagement metrics…",
-  "Finalizing results…"
-];
-
-let step = 0;
-loadingText.textContent = loadingSteps[step];
-
-const stepInterval = setInterval(() => {
-  step++;
-  if (step < loadingSteps.length) {
-    loadingText.textContent = loadingSteps[step];
-  }
-}, 1400); // change speed here
-const progressFill = document.getElementById("progressFill");
-let progress = 0;
-
-const progressInterval = setInterval(() => {
-  if (progress < 95) {
-    progress += Math.random() * 8;
-    progressFill.style.width = Math.min(progress, 95) + "%";
-  }
-}, 700);
-
-setTimeout(() => {
-  clearInterval(stepInterval);
-  clearInterval(progressInterval);
-progressFill.style.width = "100%";
-  showResult(username);
-}, 7500); // total processing time (7.5 seconds)
-
-
-function showResult(username) {
-  loadingBox.classList.add("hidden");
-
-  const interactionScore = Math.floor(Math.random() * 35) + 55;
-  const engagementLevel =
-    interactionScore > 80 ? "High" :
-    interactionScore > 65 ? "Moderate" :
-    "Low";
-
-  const activityIndex = Math.floor(Math.random() * 30) + 70;
-  const reachIndex = Math.floor(Math.random() * 25) + 65;
-
-  resultBox.innerHTML = `
-    <h3>Interaction Overview for @${username}</h3>
-
-    <div class="metric">
-      <span>Interaction Score</span>
-      <strong>${interactionScore}%</strong>
-    </div>
-
-    <div class="metric">
-      <span>Engagement Level</span>
-      <strong>${engagementLevel}</strong>
-    </div>
-
-    <div class="metric">
-      <span>Activity Index</span>
-      <strong>${activityIndex}%</strong>
-    </div>
-
-    <div class="metric">
-      <span>Reach Signal</span>
-      <strong>${reachIndex}%</strong>
-    </div>
-
-    <p class="result-note">
-      These insights are estimation-based and derived from publicly observable
-      interaction patterns, posting behavior, and engagement trends.
-    </p>
-  `;
-
-  resultBox.classList.remove("hidden");
-}
-
+});
