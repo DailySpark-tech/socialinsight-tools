@@ -1,12 +1,13 @@
-function loadPartial(id, file) {
-  fetch(file)
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("assets/partials/header.html")
     .then(res => res.text())
     .then(data => {
-      document.getElementById(id).innerHTML = data;
+      document.getElementById("header").innerHTML = data;
     });
-}
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadPartial("header", "/assets/partials/header.html");
-  loadPartial("footer", "/assets/partials/footer.html");
+  fetch("assets/partials/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
 });
