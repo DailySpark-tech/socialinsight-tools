@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultBox = document.getElementById("resultBox");
 
   checkBtn.addEventListener("click", () => {
-    const username = usernameInput.value.trim();
+    const username = usernameInput.value.trim().toLowerCase();
 
     if (!/^[a-zA-Z0-9._]{1,30}$/.test(username)) {
       alert("Please enter a valid Instagram username.");
@@ -41,12 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1400);
 
     let progress = 0;
-    const progressInterval = setInterval(() => {
-      if (progress < 95) {
-        progress += Math.random() * 8;
-        progressFill.style.width = Math.min(progress, 95) + "%";
-      }
-    }, 700);
+const progressInterval = setInterval(() => {
+  progress += Math.random() * 6 + 4; // steady growth
+  if (progress >= 95) {
+    progress = 95;
+    clearInterval(progressInterval);
+  }
+  progressFill.style.width = progress + "%";
+}, 700);
+
 
     setTimeout(() => {
       clearInterval(stepInterval);
