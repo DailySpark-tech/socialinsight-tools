@@ -282,7 +282,6 @@ nav a:hover {
 .result-box:not(.hidden) {
   animation: resultReveal 0.45s ease-out;
 }
-animation: resultReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 
 
 
@@ -303,8 +302,9 @@ animation: resultReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 /* Header */
 .site-header .container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* anchor for menu */
 }
 
 .site-header nav {
@@ -392,6 +392,10 @@ button {
   border: none;
   font-size: 26px;
   cursor: pointer;
+}
+
+.site-nav {
+  display: flex;
 }
 
 @media (max-width: 768px) {
