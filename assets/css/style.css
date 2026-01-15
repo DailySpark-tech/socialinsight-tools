@@ -380,36 +380,44 @@ button {
     padding: 12px;
   }
 }
-/* Hamburger button */
+
+/* =========================
+   MOBILE HAMBURGER MENU
+========================= */
+
+/* Desktop default */
 .menu-toggle {
   display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
 }
 
-/* Mobile nav default hidden */
+/* Mobile behavior */
 @media (max-width: 768px) {
+
   .menu-toggle {
     display: block;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
   }
 
   .site-nav {
-    display: none;
+    display: none;          /* FORCE HIDE */
     width: 100%;
     flex-direction: column;
-    gap: 8px;
-    padding-top: 10px;
+    gap: 0;
+    margin-top: 10px;
   }
 
   .site-nav.active {
-    display: flex;
+    display: flex;          /* SHOW ONLY WHEN ACTIVE */
   }
 
   .site-nav a {
-    padding: 10px 0;
+    padding: 12px 0;
     border-top: 1px solid #eee;
+    font-size: 15px;
   }
 }
+
 
