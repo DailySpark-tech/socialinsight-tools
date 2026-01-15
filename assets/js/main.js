@@ -58,31 +58,26 @@ function initMobileHeaderAdSwap() {
   if (!header || !mobileAd) return;
 
   let lastScrollY = window.scrollY;
-  let scrollDownCount = 0;
-  let lastAction = null;
+  let accumulatedDownScroll = 0;
+  const TRIGGER_DISTANCE = 120; // px required to trigger ad
 
   window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
     const delta = currentScroll - lastScrollY;
 
-    // SCROLLING DOWN (meaningful movement)
-    if (delta > 20 && currentScroll > 80) {
-      if (lastAction !== "down") {
-        scrollDownCount++;
-        lastAction = "down";
-      }
+    // SCROLLING DOWN
+    if (delta > 0 && currentScroll > 80) {
+      accumulatedDownScroll += delta;
 
-      if (scrollDownCount >= 2) {
+      if (accumulatedDownScroll >= TRIGGER_DISTANCE) {
         header.classList.add("hidden");
         mobileAd.classList.add("visible");
       }
     }
 
     // SCROLLING UP
-    if (delta < -10) {
-      lastAction = "up";
-      scrollDownCount = 0;
-
+    if (delta < 0) {
+      accumulatedDownScroll = 0;
       header.classList.remove("hidden");
       mobileAd.classList.remove("visible");
     }
