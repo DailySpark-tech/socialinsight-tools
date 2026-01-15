@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initHamburger() {
     const toggle = document.querySelector(".menu-toggle");
-    initMobileHeaderAdSwap();
     const nav = document.querySelector(".site-nav");
 
     if (!toggle || !nav) return;
