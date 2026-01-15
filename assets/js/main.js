@@ -70,6 +70,7 @@ function initMobileHeaderAdSwap() {
       accumulatedDownScroll += delta;
 
       if (accumulatedDownScroll >= TRIGGER_DISTANCE) {
+        header.classList.remove("shown");
         header.classList.add("hidden");
         mobileAd.classList.add("visible");
       }
@@ -79,6 +80,7 @@ function initMobileHeaderAdSwap() {
     if (delta < 0) {
       accumulatedDownScroll = 0;
       header.classList.remove("hidden");
+      header.classList.add("shown");
       mobileAd.classList.remove("visible");
     }
 
