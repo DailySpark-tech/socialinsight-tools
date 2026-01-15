@@ -308,7 +308,7 @@ nav a:hover {
 }
 
 .site-header nav {
-  display: flex;
+  /*display: flex;*/
   flex-wrap: wrap;
   gap: 12px;
 }
