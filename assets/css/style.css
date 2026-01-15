@@ -434,10 +434,10 @@ nav a:hover {
     left: 0;
     width: 100%;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
   }
 
   .site-header {
+    will-change: transform;
     z-index: 1000;
     background: #fff;
     transform: translateY(0); /* visible by default */
