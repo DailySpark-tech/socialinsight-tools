@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  function loadPartial(targetId, filePath) {
+  function loadPartial(targetId, filePath, callback) {
     const target = document.getElementById(targetId);
     if (!target) return;
 
@@ -13,25 +13,26 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then(html => {
         target.innerHTML = html;
+        if (typeof callback === "function") callback();
       })
       .catch(error => {
         console.error(error.message);
       });
   }
 
-  loadPartial("header", "assets/partials/header.html");
+  // Load header and attach hamburger AFTER it loads
+  loadPartial("header", "assets/partials/header.html", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const siteNav = document.querySelector(".site-nav");
+
+    if (menuToggle && siteNav) {
+      menuToggle.addEventListener("click", () => {
+        siteNav.classList.toggle("active");
+      });
+    }
+  });
+
+  // Load footer normally
   loadPartial("footer", "assets/partials/footer.html");
 
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const siteNav = document.querySelector(".site-nav");
-
-  if (menuToggle && siteNav) {
-    menuToggle.addEventListener("click", () => {
-      siteNav.classList.toggle("active");
-    });
-  }
-});
-
