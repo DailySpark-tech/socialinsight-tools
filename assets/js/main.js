@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then(html => {
         target.innerHTML = html;
+        alert("STEP 2: Header injected");
         if (typeof callback === "function") callback();
       })
       .catch(error => {
