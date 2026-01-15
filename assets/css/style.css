@@ -393,11 +393,25 @@ nav a:hover {
 
   .site-nav {
     display: none;
+    position: absolute;
+    top: 100%;              /* ⬇ below header */
+    left: 0;
     width: 100%;
+    background: #ffffff;
     flex-direction: column;
-    margin-top: 12px;
     border-top: 1px solid #e5e7eb;
-    padding-top: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    z-index: 1000;
+  }
+
+  .site-nav a {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 16px;
+  }
+
+  .site-nav a:last-child {
+    border-bottom: none;
   }
 
   .site-nav.active {
