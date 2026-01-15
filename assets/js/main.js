@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loadPartial("footer", "assets/partials/footer.html");
 
   function initHamburger() {
+    alert("initHamburger running");
     const toggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".site-nav");
 
