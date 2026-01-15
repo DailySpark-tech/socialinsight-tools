@@ -14,7 +14,7 @@ body {
 .container {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;   /* 🔥 THIS IS THE MISSING PIECE */
+  margin: 0 auto;
   padding: 0 16px;
 }
 
@@ -401,6 +401,7 @@ nav a:hover {
   top: 100%;
   left: 0;
   width: 100%;
+  gap: 0;
   background: #ffffff;
   flex-direction: column;
   border-top: 1px solid #e5e7eb;
