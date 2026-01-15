@@ -406,6 +406,7 @@ nav a:hover {
 
   .site-nav a {
     padding: 14px 16px;
+    margin-left: 0;
     border-bottom: 1px solid #f1f5f9;
     font-size: 16px;
   }
@@ -416,23 +417,5 @@ nav a:hover {
 
   .site-nav.active {
     display: flex;
-  }
-}
-/* =========================
-   MOBILE MENU GAP FIX
-========================= */
-
-.site-nav {
-  margin: 0;
-  padding: 0;
-}
-
-.site-nav a {
-  margin: 0;
-  line-height: 1.4;
-}
-@media (max-width: 768px) {
-  .site-nav {
-    top: calc(100% + 0px); /* force flush */
   }
 }
