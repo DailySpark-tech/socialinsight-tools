@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
   loadPartial("footer", "assets/partials/footer.html");
 
+  
+
   function initHamburger() {
     const toggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".site-nav");
@@ -56,16 +58,22 @@ function initMobileHeaderAdSwap() {
   if (!header || !mobileAd) return;
 
   let lastScrollY = window.scrollY;
+  let scrollDownCount = 0;
 
   window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
 
+    // Scrolling down
     if (currentScroll > lastScrollY && currentScroll > 80) {
-      // scrolling DOWN
-      header.classList.add("hidden");
-      mobileAd.classList.add("visible");
+      scrollDownCount++;
+
+      if (scrollDownCount >= 2) {
+        header.classList.add("hidden");
+        mobileAd.classList.add("visible");
+      }
+
     } else {
-      // scrolling UP
+      // Scrolling up
       header.classList.remove("hidden");
       mobileAd.classList.remove("visible");
     }
