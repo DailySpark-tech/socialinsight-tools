@@ -381,35 +381,3 @@ button {
   }
 }
 
-/* Hamburger button */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Mobile nav default hidden */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .site-nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    gap: 8px;
-    padding-top: 10px;
-  }
-
-  .site-nav.active {
-    display: flex;
-  }
-
-  .site-nav a {
-    padding: 10px 0;
-    border-top: 1px solid #eee;
-  }
-}
