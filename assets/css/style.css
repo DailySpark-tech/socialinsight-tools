@@ -451,17 +451,19 @@ nav a:hover {
   }
 
   /* Header hidden when scrolling down */
-  .site-header.hidden {
+  .site-header.header-hidden {
     transform: translateY(-100%);
+  }
+
+  .site-header.header-visible {
+    transform: translateY(0);
   }
 
   /* Ad visible when scrolling down */
   .mobile-ad-bar.visible {
     transform: translateY(0);
   }
-  .site-header.shown {
-    transform: translateY(0);
-  }
+  
   body {
     padding-top: 56px;
   }
