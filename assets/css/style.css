@@ -303,7 +303,7 @@ animation: resultReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 /* Header */
 .site-header .container {
   display: flex;
-  flex-wrap: no wrap;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
