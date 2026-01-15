@@ -20,19 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  // Load header and attach hamburger AFTER it loads
-  loadPartial("header", "assets/partials/header.html", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const siteNav = document.querySelector(".site-nav");
-
-    if (menuToggle && siteNav) {
-      menuToggle.addEventListener("click", () => {
-        siteNav.classList.toggle("active");
-      });
-    }
-  });
-
-  // Load footer normally
+  loadPartial("header", "assets/partials/header.html");
   loadPartial("footer", "assets/partials/footer.html");
 
 });
