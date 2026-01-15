@@ -27,6 +27,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .logo {
@@ -38,6 +39,10 @@ body {
   color: #2563eb;
 }
 
+.site-header nav {
+  display: flex;
+  gap: 16px;
+}
 nav a {
   margin-left: 18px;
   text-decoration: none;
@@ -385,37 +390,40 @@ button {
    MOBILE HAMBURGER MENU
 ========================= */
 
-/* Desktop default */
 .menu-toggle {
   display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
 }
 
-/* Mobile behavior */
+/* Mobile only */
 @media (max-width: 768px) {
 
   .menu-toggle {
     display: block;
-    background: none;
-    border: none;
-    font-size: 26px;
-    cursor: pointer;
   }
 
   .site-nav {
-    display: none !important;          /* FORCE HIDE */
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
+    background: #fff;
+    display: none;
     flex-direction: column;
-    gap: 0;
-    margin-top: 10px;
+    padding: 10px 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   }
 
   .site-nav.active {
-    display: flex;          /* SHOW ONLY WHEN ACTIVE */
+    display: flex;
   }
 
   .site-nav a {
     padding: 12px 0;
-    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
     font-size: 15px;
   }
 }
