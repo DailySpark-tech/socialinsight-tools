@@ -20,7 +20,18 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  loadPartial("header", "assets/partials/header.html");
+  loadPartial("header", "assets/partials/header.html", initHamburger);
   loadPartial("footer", "assets/partials/footer.html");
+
+  function initHamburger() {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".site-nav");
+
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  }
 
 });
