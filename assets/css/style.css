@@ -437,8 +437,8 @@ nav a:hover {
   }
 
   .site-header {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
+    /*transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;*/
     z-index: 1000;
     background: #fff;
     transform: translateY(0); /* visible by default */
@@ -460,18 +460,10 @@ nav a:hover {
   .mobile-ad-bar.visible {
     transform: translateY(0);
   }
+  .site-header.shown {
+    transform: translateY(0);
+  }
   body {
     padding-top: 56px;
-  }
-}
-@media (max-width: 768px) {
-  .site-header,
-  .site-header.hidden {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .mobile-ad-bar,
-  .mobile-ad-bar.visible {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
