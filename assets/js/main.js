@@ -1,3 +1,5 @@
+alert("main.js loaded");
+
 document.addEventListener("DOMContentLoaded", function () {
 
   function loadPartial(targetId, filePath, callback) {
