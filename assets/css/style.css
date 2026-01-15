@@ -28,7 +28,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  Position: relative;
+  position: relative;
 }
 
 .logo {
@@ -397,21 +397,24 @@ nav a:hover {
   }
   
   .site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;              /* ⬇ below header */
-    left: 0;
-    gap: 0;
-    width: 100%;
-    background: #ffffff;
-    flex-direction: column;
-    border-top: 1px solid #e5e7eb;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    z-index: 1000;
-    opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  }
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  flex-direction: column;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  z-index: 1000;
+
+  /* animation-safe hiding */
+  opacity: 0;
+  transform: translateY(-8px);
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
 
   .site-nav a {
     padding: 14px 16px;
@@ -424,8 +427,9 @@ nav a:hover {
   }
 
   .site-nav.active {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
 }
