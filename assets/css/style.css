@@ -386,26 +386,21 @@ button {
    MOBILE HAMBURGER MENU
 ========================= */
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 26px;
-  cursor: pointer;
-}
+/* =========================
+   FINAL MOBILE NAV FIX
+========================= */
 
+/* Desktop default */
 .site-nav {
   display: flex;
+  gap: 16px;
 }
 
+/* Mobile override */
 @media (max-width: 768px) {
 
-  .menu-toggle {
-    display: block;
-  }
-
   .site-nav {
-    display: none;
+    display: none; /* 🔥 THIS IS THE KEY */
     position: absolute;
     top: 100%;
     left: 0;
@@ -417,14 +412,9 @@ button {
   }
 
   .site-nav.active {
-    display: flex;
-  }
-
-  .site-nav a {
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
-    font-size: 15px;
+    display: flex; /* ONLY visible when active */
   }
 }
+
 
 
