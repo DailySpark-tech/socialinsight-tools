@@ -413,3 +413,43 @@ nav a:hover {
   pointer-events: auto;
 }
 }
+
+
+/* =========================
+   MOBILE STICKY HEADER + AD
+========================= */
+
+@media (max-width: 768px) {
+
+  .mobile-ad-bar,
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: transform 0.25s ease;
+  }
+
+  .mobile-ad-bar {
+    background: #f1f5f9;
+  }
+
+  /* Initial states */
+  .site-header {
+    transform: translateY(-100%);
+  }
+
+  .mobile-ad-bar.hidden {
+    transform: translateY(-100%);
+  }
+
+  .site-header.visible {
+    transform: translateY(0);
+  }
+
+  /* Push page content down */
+  body {
+    padding-top: 56px;
+  }
+}
