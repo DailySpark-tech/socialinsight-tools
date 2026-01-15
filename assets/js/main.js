@@ -58,22 +58,16 @@ function initMobileHeaderAdSwap() {
   if (!header || !mobileAd) return;
 
   let lastScrollY = window.scrollY;
-  let scrollDownCount = 0;
 
   window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
 
-    // Scrolling down
     if (currentScroll > lastScrollY && currentScroll > 80) {
-      scrollDownCount++;
-
-      if (scrollDownCount >= 2) {
-        header.classList.add("hidden");
-        mobileAd.classList.add("visible");
-      }
-
+      // scrolling DOWN
+      header.classList.add("hidden");
+      mobileAd.classList.add("visible");
     } else {
-      // Scrolling up
+      // scrolling UP
       header.classList.remove("hidden");
       mobileAd.classList.remove("visible");
     }
@@ -81,4 +75,5 @@ function initMobileHeaderAdSwap() {
     lastScrollY = currentScroll;
   });
 }
+
 
