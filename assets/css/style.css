@@ -401,7 +401,7 @@ button {
 }
 
 .site-header .container {
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
