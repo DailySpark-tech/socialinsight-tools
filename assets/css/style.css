@@ -285,48 +285,10 @@ nav a:hover {
 }
 
 
-
 /* =========================
-   RESPONSIVE LAYOUT FIXES
+   RESPONSIVE LAYOUT
 ========================= */
 
-* {
-  box-sizing: border-box;
-}
-
-.container {
-  width: 100%;
-  max-width: 1100px;
-  padding: 0 16px;
-}
-
-/* Header */
-.site-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative; /* anchor for menu */
-}
-
-.site-header nav {
-  /*display: flex;*/
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-/* Inputs & buttons */
-input,
-button {
-  width: 100%;
-  font-size: 16px; /* Prevents iOS zoom */
-}
-
-/* Tool card */
-.tool-card,
-.result-box,
-.loading-box {
-  width: 100%;
-}
 @media (max-width: 768px) {
 
   /* Header */
@@ -383,43 +345,61 @@ button {
   }
 }
 
-/* =========================
-   MOBILE HAMBURGER MENU
-========================= */
 
 /* =========================
-   FINAL HEADER FIX
-========================= */
-/* =========================
-   ABSOLUTE HAMBURGER FIX
+   CLEAN HEADER + HAMBURGER
 ========================= */
 
+/* Header layout */
 .site-header {
-  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
 }
 
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Desktop nav */
+.site-nav {
+  display: flex;
+  gap: 18px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 15px;
+}
+
+/* Hamburger */
 .menu-toggle {
   display: none;
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  width: auto;
-  padding: 0;
   background: none;
   border: none;
   font-size: 26px;
   cursor: pointer;
-  line-height: 1;
 }
 
-/* Mobile only */
+/* Mobile */
 @media (max-width: 768px) {
+
   .menu-toggle {
     display: block;
   }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 12px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 10px;
+  }
+
+  .site-nav.active {
+    display: flex;
+  }
 }
-
-
-
-
