@@ -406,7 +406,6 @@ nav a:hover {
 
   .site-nav a {
     padding: 14px 16px;
-    margin-left: 0;
     border-bottom: 1px solid #f1f5f9;
     font-size: 16px;
   }
@@ -417,5 +416,14 @@ nav a:hover {
 
   .site-nav.active {
     display: flex;
+  }
+}
+/* =========================
+   MOBILE NAV FINAL FIX
+========================= */
+
+@media (max-width: 768px) {
+  .site-nav a {
+    margin-left: 0;   /* 🔥 THIS is the missing fix */
   }
 }
