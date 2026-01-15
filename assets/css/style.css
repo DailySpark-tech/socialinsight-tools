@@ -387,20 +387,42 @@ button {
 ========================= */
 
 /* =========================
-   FINAL MOBILE NAV FIX
+   FINAL HEADER FIX
 ========================= */
 
-/* Desktop default */
+.menu-toggle {
+  display: none;
+  width: auto;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+/* Desktop nav */
 .site-nav {
   display: flex;
   gap: 16px;
 }
 
-/* Mobile override */
+/* Mobile nav */
 @media (max-width: 768px) {
 
+  .menu-toggle {
+    display: block;
+  }
+
   .site-nav {
-    display: none; /* 🔥 THIS IS THE KEY */
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -412,9 +434,10 @@ button {
   }
 
   .site-nav.active {
-    display: flex; /* ONLY visible when active */
+    display: flex;
   }
 }
+
 
 
 
