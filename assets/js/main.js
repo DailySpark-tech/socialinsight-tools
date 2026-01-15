@@ -1,5 +1,3 @@
-alert("main.js loaded");
-
 document.addEventListener("DOMContentLoaded", function () {
 
   function loadPartial(targetId, filePath, callback) {
@@ -15,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then(html => {
         target.innerHTML = html;
-        alert("STEP 2: Header injected");
         if (typeof callback === "function") callback();
       })
       .catch(error => {
@@ -27,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
   loadPartial("footer", "assets/partials/footer.html");
 
   function initHamburger() {
-    alert("initHamburger running");
     const toggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".site-nav");
 
