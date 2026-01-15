@@ -390,52 +390,33 @@ button {
 /* =========================
    FINAL HEADER FIX
 ========================= */
+/* =========================
+   ABSOLUTE HAMBURGER FIX
+========================= */
+
+.site-header {
+  position: relative;
+}
 
 .menu-toggle {
   display: none;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
   width: auto;
   padding: 0;
   background: none;
   border: none;
   font-size: 26px;
   cursor: pointer;
+  line-height: 1;
 }
 
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  position: relative;
-}
-
-/* Desktop nav */
-.site-nav {
-  display: flex;
-  gap: 16px;
-}
-
-/* Mobile nav */
+/* Mobile only */
 @media (max-width: 768px) {
-
   .menu-toggle {
     display: block;
-  }
-
-  .site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    flex-direction: column;
-    padding: 12px 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  }
-
-  .site-nav.active {
-    display: flex;
   }
 }
 
