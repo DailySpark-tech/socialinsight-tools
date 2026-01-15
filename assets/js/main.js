@@ -32,6 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle.addEventListener("click", () => {
       nav.classList.toggle("active");
     });
+    // Close menu when a nav link is clicked (mobile)
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
+});
+
   }
 
 });
