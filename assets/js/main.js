@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initHamburger() {
     const toggle = document.querySelector(".menu-toggle");
+    initMobileHeaderAdSwap();
     const nav = document.querySelector(".site-nav");
 
     if (!toggle || !nav) return;
@@ -38,31 +39,36 @@ nav.querySelectorAll("a").forEach(link => {
     nav.classList.remove("active");
   });
 });
-
+    
   }
-
 });
 
 
 
-let lastScrollY = window.scrollY;
-const header = document.querySelector(".site-header");
-const mobileAd = document.getElementById("mobileAd");
-
-window.addEventListener("scroll", () => {
+function initMobileHeaderAdSwap() {
   if (window.innerWidth > 768) return;
 
-  const currentScroll = window.scrollY;
+  const header = document.querySelector(".site-header");
+  const mobileAd = document.getElementById("mobileAd");
 
-  if (currentScroll < lastScrollY && currentScroll > 50) {
-    // Scrolling UP
-    header.classList.add("visible");
-    mobileAd.classList.add("hidden");
-  } else {
-    // Scrolling DOWN
-    header.classList.remove("visible");
-    mobileAd.classList.remove("hidden");
-  }
+  if (!header || !mobileAd) return;
 
-  lastScrollY = currentScroll;
-});
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScrollY && currentScroll > 80) {
+      // scrolling DOWN
+      header.classList.add("hidden");
+      mobileAd.classList.add("visible");
+    } else {
+      // scrolling UP
+      header.classList.remove("hidden");
+      mobileAd.classList.remove("visible");
+    }
+
+    lastScrollY = currentScroll;
+  });
+}
+
