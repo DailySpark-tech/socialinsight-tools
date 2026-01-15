@@ -402,7 +402,7 @@ button {
   }
 
   .site-nav {
-    display: none;          /* FORCE HIDE */
+    display: none !important;          /* FORCE HIDE */
     width: 100%;
     flex-direction: column;
     gap: 0;
