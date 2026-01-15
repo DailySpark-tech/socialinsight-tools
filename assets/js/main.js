@@ -23,3 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
   loadPartial("footer", "assets/partials/footer.html");
 
 });
+
+const menuToggle = document.querySelector(".menu-toggle");
+const siteNav = document.querySelector(".site-nav");
+
+if (menuToggle && siteNav) {
+  menuToggle.addEventListener("click", () => {
+    siteNav.classList.toggle("active");
+  });
+}
