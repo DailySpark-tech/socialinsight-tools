@@ -431,3 +431,8 @@ nav a:hover {
   margin: 0;
   line-height: 1.4;
 }
+@media (max-width: 768px) {
+  .site-nav {
+    top: calc(100% + 0px); /* force flush */
+  }
+}
