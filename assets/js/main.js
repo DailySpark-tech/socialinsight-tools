@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  loadPartial("header", "assets/partials/header.html", initHamburger);
+  loadPartial("header", "assets/partials/header.html", initHamburger); initMobileHeaderAdSwap);
   loadPartial("footer", "assets/partials/footer.html");
 
   function initHamburger() {
