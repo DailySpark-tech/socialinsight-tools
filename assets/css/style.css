@@ -419,11 +419,17 @@ nav a:hover {
   }
 }
 /* =========================
-   MOBILE NAV FINAL FIX
+   MOBILE MENU GAP KILLER
 ========================= */
 
 @media (max-width: 768px) {
   .site-nav a {
-    margin-left: 0;   /* 🔥 THIS is the missing fix */
+    display: block;
+    margin: 0;
+    line-height: 1.2; /* 🔥 THIS removes the fake top gap */
+  }
+
+  .site-nav {
+    padding-top: 0;
   }
 }
