@@ -367,16 +367,12 @@ nav a:hover {
 .site-nav {
   display: flex;
   gap: 18px;
-  margin: 0;
-  padding: 0;
 }
 
 .site-nav a {
   text-decoration: none;
   color: #374151;
   font-size: 15px;
-  margin: 0;
-  line-height: 1.4;
 }
 
 /* Hamburger */
@@ -421,4 +417,17 @@ nav a:hover {
   .site-nav.active {
     display: flex;
   }
+}
+/* =========================
+   MOBILE MENU GAP FIX
+========================= */
+
+.site-nav {
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  margin: 0;
+  line-height: 1.4;
 }
