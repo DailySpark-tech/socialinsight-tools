@@ -415,40 +415,44 @@ nav a:hover {
 }
 
 
+
 /* =========================
-   MOBILE STICKY HEADER + AD
+   MOBILE HEADER + SCROLL AD
 ========================= */
 
 @media (max-width: 768px) {
 
-  .mobile-ad-bar,
-  .site-header {
+  .site-header,
+  .mobile-ad-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
     transition: transform 0.25s ease;
   }
 
-  .mobile-ad-bar {
-    background: #f1f5f9;
-  }
-
-  /* Initial states */
   .site-header {
+    z-index: 1000;
+    background: #fff;
+    transform: translateY(0); /* visible by default */
+  }
+
+  .mobile-ad-bar {
+    z-index: 999;
+    background: #f1f5f9;
+    transform: translateY(-100%); /* hidden by default */
+  }
+
+  /* Header hidden when scrolling down */
+  .site-header.hidden {
     transform: translateY(-100%);
   }
 
-  .mobile-ad-bar.hidden {
-    transform: translateY(-100%);
-  }
-
-  .site-header.visible {
+  /* Ad visible when scrolling down */
+  .mobile-ad-bar.visible {
     transform: translateY(0);
   }
 
-  /* Push page content down */
   body {
     padding-top: 56px;
   }
