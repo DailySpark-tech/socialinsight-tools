@@ -70,8 +70,8 @@ function initMobileHeaderAdSwap() {
       accumulatedDownScroll += delta;
 
       if (accumulatedDownScroll >= TRIGGER_DISTANCE) {
-        header.classList.remove("shown");
-        header.classList.add("hidden");
+        header.classList.remove("header-visible");
+        header.classList.add("header-hidden");
         mobileAd.classList.add("visible");
       }
     }
@@ -79,8 +79,8 @@ function initMobileHeaderAdSwap() {
     // SCROLLING UP
     if (delta < 0) {
       accumulatedDownScroll = 0;
-      header.classList.remove("hidden");
-      header.classList.add("shown");
+      header.classList.remove("header-hidden");
+      header.classList.add("header-visible");
       mobileAd.classList.remove("visible");
     }
 
