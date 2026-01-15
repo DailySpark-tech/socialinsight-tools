@@ -420,6 +420,11 @@ nav a:hover {
    MOBILE HEADER + SCROLL AD
 ========================= */
 
+/* Hide mobile ad bar on desktop */
+.mobile-ad-bar {
+  display: none;
+}
+
 @media (max-width: 768px) {
 
   .site-header,
@@ -438,6 +443,7 @@ nav a:hover {
   }
 
   .mobile-ad-bar {
+    display: block;
     z-index: 999;
     background: #f1f5f9;
     transform: translateY(-100%); /* hidden by default */
