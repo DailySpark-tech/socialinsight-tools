@@ -396,6 +396,7 @@ nav a:hover {
     position: absolute;
     top: 100%;              /* ⬇ below header */
     left: 0;
+    gap: 0;
     width: 100%;
     background: #ffffff;
     flex-direction: column;
@@ -416,20 +417,5 @@ nav a:hover {
 
   .site-nav.active {
     display: flex;
-  }
-}
-/* =========================
-   MOBILE MENU GAP KILLER
-========================= */
-
-@media (max-width: 768px) {
-  .site-nav a {
-    display: block;
-    margin: 0;
-    line-height: 1.2; /* 🔥 THIS removes the fake top gap */
-  }
-
-  .site-nav {
-    padding-top: 0;
   }
 }
