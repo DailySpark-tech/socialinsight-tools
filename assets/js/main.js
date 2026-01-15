@@ -42,3 +42,27 @@ nav.querySelectorAll("a").forEach(link => {
   }
 
 });
+
+
+
+let lastScrollY = window.scrollY;
+const header = document.querySelector(".site-header");
+const mobileAd = document.getElementById("mobileAd");
+
+window.addEventListener("scroll", () => {
+  if (window.innerWidth > 768) return;
+
+  const currentScroll = window.scrollY;
+
+  if (currentScroll < lastScrollY && currentScroll > 50) {
+    // Scrolling UP
+    header.classList.add("visible");
+    mobileAd.classList.add("hidden");
+  } else {
+    // Scrolling DOWN
+    header.classList.remove("visible");
+    mobileAd.classList.remove("hidden");
+  }
+
+  lastScrollY = currentScroll;
+});
