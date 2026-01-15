@@ -59,21 +59,30 @@ function initMobileHeaderAdSwap() {
 
   let lastScrollY = window.scrollY;
   let scrollDownCount = 0;
+  let lastAction = null;
 
   window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
+    const delta = currentScroll - lastScrollY;
 
-    // Scrolling down
-    if (currentScroll > lastScrollY && currentScroll > 80) {
-      scrollDownCount++;
+    // SCROLLING DOWN (meaningful movement)
+    if (delta > 20 && currentScroll > 80) {
+      if (lastAction !== "down") {
+        scrollDownCount++;
+        lastAction = "down";
+      }
 
       if (scrollDownCount >= 2) {
         header.classList.add("hidden");
         mobileAd.classList.add("visible");
       }
+    }
 
-    } else {
-      // Scrolling up
+    // SCROLLING UP
+    if (delta < -10) {
+      lastAction = "up";
+      scrollDownCount = 0;
+
       header.classList.remove("hidden");
       mobileAd.classList.remove("visible");
     }
@@ -81,4 +90,3 @@ function initMobileHeaderAdSwap() {
     lastScrollY = currentScroll;
   });
 }
-
