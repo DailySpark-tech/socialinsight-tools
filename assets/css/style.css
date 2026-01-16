@@ -517,22 +517,43 @@ nav a:hover {
 }
 
 
+/* SEO Text Section (Refined, Responsive) */
 .seo-text {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e6e6e6;
+  max-width: 900px;
+  margin: 3.5rem auto 0;
+  padding: 2rem 1.8rem;
+  background: #fafafa;
+  border-radius: 14px;
+  border: 1px solid #eaeaea;
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #555;
 }
 
+/* Title */
 .seo-text h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.35rem;
+  margin-bottom: 0.9rem;
   color: #222;
+  font-weight: 600;
 }
 
+/* Paragraphs */
 .seo-text p {
   margin-bottom: 0.9rem;
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .seo-text {
+    margin: 2.5rem 1rem 0;
+    padding: 1.6rem 1.4rem;
+    font-size: 0.93rem;
+  }
+
+  .seo-text h2 {
+    font-size: 1.2rem;
+  }
+}
+
 
