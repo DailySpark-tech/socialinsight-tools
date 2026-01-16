@@ -90,8 +90,6 @@ nav a:hover {
   border-radius: 16px;
   padding: 1.6rem 1.6rem 2.4rem;
   border: 1px solid #e6e6e6;
-  text-decoration: none;
-  color: inherit;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
