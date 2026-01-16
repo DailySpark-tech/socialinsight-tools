@@ -74,6 +74,12 @@ nav a:hover {
   max-width: 900px;
   margin: 0 auto;
 }
+/* Tablet */
+@media (max-width: 900px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 .tool-card h3 {
   margin-bottom: 8px;
@@ -130,12 +136,6 @@ nav a:hover {
 @media (hover: none) {
   .tool-card:active {
     transform: scale(0.98);
-  }
-}
-/* Tablet */
-@media (max-width: 600px) {
-  .tool-grid {
-    grid-template-columns: 1fr;
   }
 }
 
