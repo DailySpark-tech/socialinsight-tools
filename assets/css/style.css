@@ -468,3 +468,51 @@ nav a:hover {
   }
 }
 
+
+/* =========================
+   Static Pages (Disclaimer, FAQ)
+   ========================= */
+
+.page-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  line-height: 1.7;
+}
+
+/* Headings */
+.page-content h1 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.page-content h2 {
+  font-size: 1.25rem;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+/* Paragraphs */
+.page-content p {
+  margin-bottom: 14px;
+  color: #444;
+}
+
+/* Sections */
+.page-content section {
+  margin-bottom: 24px;
+}
+
+/* Mobile & tablet spacing fix */
+@media (max-width: 768px) {
+  .page-content {
+    padding-top: 70px; /* pushes content away from header */
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .page-content h1 {
+    font-size: 1.6rem;
+  }
+}
+
