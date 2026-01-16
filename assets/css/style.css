@@ -66,26 +66,13 @@ nav a:hover {
   color: #4b5563;
 }
 
-/* Tools */
-.tools-grid {
+/* Tool Grid – Max 2 Columns */
+.tool-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.tool-card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  text-decoration: none;
-  color: inherit;
-  transition: 0.2s ease;
-}
-
-.tool-card:hover {
-  transform: translateY(-4px);
-  border-color: #2563eb;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .tool-card h3 {
@@ -103,6 +90,8 @@ nav a:hover {
   border-radius: 16px;
   padding: 1.6rem 1.6rem 2.4rem;
   border: 1px solid #e6e6e6;
+  text-decoration: none;
+  color: inherit;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -143,7 +132,12 @@ nav a:hover {
     transform: scale(0.98);
   }
 }
-
+/* Tablet */
+@media (max-width: 600px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 /* ================================
