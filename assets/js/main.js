@@ -48,6 +48,18 @@ nav.querySelectorAll("a").forEach(link => {
 });
 
 
+document.addEventListener("click", (e) => {
+  if (!siteNav.classList.contains("active")) return;
+
+  const clickedInsideMenu = siteNav.contains(e.target);
+  const clickedToggle = menuToggle.contains(e.target);
+
+  if (!clickedInsideMenu && !clickedToggle) {
+    siteNav.classList.remove("active");
+  }
+});
+
+
 
 
 function initMobileHeaderAdSwap() {
