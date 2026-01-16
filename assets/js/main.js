@@ -21,42 +21,31 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   loadPartial("header", "assets/partials/header.html", () => {
-  initHamburgerMenu();
+  initHamburger();
   initMobileHeaderAdSwap();
 });
   loadPartial("footer", "assets/partials/footer.html");
 
   
 
-  function initHamburgerMenu() {
-  const toggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".site-nav");
-  const overlay = document.getElementById("navOverlay");
+  function initHamburger() {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".site-nav");
 
-  if (!toggle || !nav || !overlay) return;
+    if (!toggle || !nav) return;
 
-  //Open/close via hamburger
-  toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-  overlay.classList.toggle("active");
-  overlay.style.top = document.querySelector(".site-header").offsetHeight + "px";
-});
-
-
-  // Close when tapping overlay
-  overlay.addEventListener("click", () => {
-    nav.classList.remove("active");
-    overlay.classList.remove("active");
-  });
-
-  // Close when clicking a nav link
-  nav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("active");
-      overlay.classList.remove("active");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
     });
+    // Close menu when a nav link is clicked (mobile)
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
   });
-}
+});
+    
+  }
+});
 
 
 
@@ -65,11 +54,6 @@ function initMobileHeaderAdSwap() {
   if (window.innerWidth > 768) return;
 
   const header = document.querySelector(".site-header");
-  
-  // Force initial visible state
-header.classList.remove("header-hidden");
-header.classList.add("header-visible");
-
   const mobileAd = document.getElementById("mobileAd");
 
   if (!header || !mobileAd) return;
