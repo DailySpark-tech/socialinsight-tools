@@ -301,6 +301,14 @@ nav a:hover {
     font-size: 14px;
   }
 
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+  
   /* Tool layout */
   .tool-card {
     padding: 16px;
