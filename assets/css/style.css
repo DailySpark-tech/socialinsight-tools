@@ -384,9 +384,9 @@ nav a:hover {
   display: flex;
   gap: 18px;
 }
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
   .site-nav {
-    gap: 12px;
+    gap: 10px;
   }
 }
 .site-nav a {
