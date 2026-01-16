@@ -52,6 +52,12 @@ nav a {
     margin-left: 5px;
   }
 }
+@media (max-width: 769px) {
+  nav a {
+    margin-left: 0px;
+    font-size: 12px;
+  }
+}
 
 nav a:hover {
   color: #2563eb;
@@ -81,7 +87,7 @@ nav a:hover {
   margin: 0 auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .tools-grid {
     grid-template-columns: 1fr;
   }
