@@ -516,3 +516,23 @@ nav a:hover {
   }
 }
 
+
+.seo-text {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e6e6e6;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.seo-text h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.seo-text p {
+  margin-bottom: 0.9rem;
+}
+
