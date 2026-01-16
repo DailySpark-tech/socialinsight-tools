@@ -44,18 +44,18 @@ nav.querySelectorAll("a").forEach(link => {
   });
 });
     
+// Close on outside tap
+document.addEventListener("click", (e) => {
+  if (!nav.classList.contains("active")) return;
+
+  const clickedInsideNav = nav.contains(e.target);
+  const clickedToggle = toggle.contains(e.target);
+
+  if (!clickedInsideNav && !clickedToggle) {
+    nav.classList.remove("active");
   }
 });
-
-
-document.addEventListener("click", (e) => {
-  if (!siteNav.classList.contains("active")) return;
-
-  const clickedInsideMenu = siteNav.contains(e.target);
-  const clickedToggle = menuToggle.contains(e.target);
-
-  if (!clickedInsideMenu && !clickedToggle) {
-    siteNav.classList.remove("active");
+    
   }
 });
 
