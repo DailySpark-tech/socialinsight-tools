@@ -25,10 +25,6 @@ body {
   position: relative;
 }
 
-.site-header {
-  transform: translateY(0);
-}
-
 .site-header .container {
   display: flex;
   justify-content: space-between;
@@ -473,24 +469,3 @@ nav a:hover {
   }
 }
 
-
-/* =========================
-   MOBILE NAV OVERLAY
-========================= */
-
-@media (max-width: 768px) {
-  .nav-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 997; /* BELOW header */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-  }
-
-  .nav-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
