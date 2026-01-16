@@ -28,24 +28,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
 
-  function initHamburger() {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".site-nav");
+  function initHamburgerMenu() {
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".site-nav");
+  const overlay = document.getElementById("navOverlay");
 
-    if (!toggle || !nav) return;
+  if (!toggle || !nav || !overlay) return;
 
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
-    // Close menu when a nav link is clicked (mobile)
-nav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("active");
+  // Open / close via hamburger
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    overlay.classList.toggle("active");
   });
-});
-    
-  }
-});
+
+  // Close when tapping overlay
+  overlay.addEventListener("click", () => {
+    nav.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+
+  // Close when clicking a nav link
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  });
+}
+
 
 
 
