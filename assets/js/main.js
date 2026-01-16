@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   loadPartial("header", "assets/partials/header.html", () => {
-  initHamburger();
+  initHamburgerMenu();
   initMobileHeaderAdSwap();
 });
   loadPartial("footer", "assets/partials/footer.html");
@@ -35,11 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!toggle || !nav || !overlay) return;
 
-  // Open / close via hamburger
+  //Open/close via hamburger
   toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-    overlay.classList.toggle("active");
-  });
+  nav.classList.toggle("active");
+  overlay.classList.toggle("active");
+  overlay.style.top = document.querySelector(".site-header").offsetHeight + "px";
+});
+
 
   // Close when tapping overlay
   overlay.addEventListener("click", () => {
