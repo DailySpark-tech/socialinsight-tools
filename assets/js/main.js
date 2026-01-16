@@ -65,6 +65,11 @@ function initMobileHeaderAdSwap() {
   if (window.innerWidth > 768) return;
 
   const header = document.querySelector(".site-header");
+  
+  // Force initial visible state
+header.classList.remove("header-hidden");
+header.classList.add("header-visible");
+
   const mobileAd = document.getElementById("mobileAd");
 
   if (!header || !mobileAd) return;
