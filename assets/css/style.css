@@ -405,7 +405,7 @@ nav a:hover {
 }
 
 /* Mobile */
-@media (max-width: 950px) {
+@media (max-width: 925px) {
 
   .menu-toggle {
     display: block;
