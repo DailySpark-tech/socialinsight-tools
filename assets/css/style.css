@@ -284,6 +284,9 @@ nav a:hover {
   animation: resultReveal 0.45s ease-out;
 }
 
+.container .page-content {
+  margin-top: 30px;
+}
 
 /* =========================
    RESPONSIVE LAYOUT
