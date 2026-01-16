@@ -25,6 +25,10 @@ body {
   position: relative;
 }
 
+.site-header {
+  transform: translateY(0);
+}
+
 .site-header .container {
   display: flex;
   justify-content: space-between;
