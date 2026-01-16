@@ -284,10 +284,6 @@ nav a:hover {
   animation: resultReveal 0.45s ease-out;
 }
 
-.container .page-content {
-  margin-top: 30px;
-}
-
 /* =========================
    RESPONSIVE LAYOUT
 ========================= */
@@ -302,17 +298,6 @@ nav a:hover {
 
   .hero p {
     font-size: 14px;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-  p {
-  font-size: 14px;
   }
   
   /* Tool layout */
