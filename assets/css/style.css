@@ -662,14 +662,8 @@ nav a:hover {
 
 /* Only mobile is allowed to show it */
 @media (max-width: 768px) {
-  .mobile-sticky-ad.visible {
+  .mobile-sticky-ad {
     display: block;
-  }
-}
-
-/* Reserve space so it feels truly sticky */
-@media (max-width: 768px) {
-  body.has-sticky-ad {
     padding-bottom: 70px;
   }
 }
