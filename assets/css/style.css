@@ -599,3 +599,61 @@ nav a:hover {
 
 /*ADvertisement*/
 
+.ad-container {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.ad-placeholder {
+  width: 100%;
+  min-height: 90px;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #888;
+}
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.ad-grid-item {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
+/.. for tool page ad input % button and after result box../
+
+.tool-ad {
+  margin: 25px auto;
+}
+/.. for mobile sticky ad at the bottom../
+
+.mobile-sticky-ad {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 6px 0;
+  text-align: center;
+  z-index: 9999;
+  display: none;
+}
