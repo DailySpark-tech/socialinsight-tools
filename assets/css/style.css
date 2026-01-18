@@ -66,8 +66,9 @@ nav a:hover {
   color: #4b5563;
 }
 .hero-p {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
+  padding-top: 5px;
 }
 
 /* Tool Grid – Max 2 Columns */
