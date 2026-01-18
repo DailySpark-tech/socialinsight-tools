@@ -643,8 +643,10 @@ nav a:hover {
 .tool-ad {
   margin: 25px auto;
 }
+
 /.. for mobile sticky ad at the bottom../
 
+/* Sticky ad base: hidden everywhere */
 .mobile-sticky-ad {
   position: fixed;
   bottom: 0;
@@ -656,4 +658,18 @@ nav a:hover {
   text-align: center;
   z-index: 9999;
   display: none;
+}
+
+/* Only mobile is allowed to show it */
+@media (max-width: 768px) {
+  .mobile-sticky-ad.visible {
+    display: block;
+  }
+}
+
+/* Reserve space so it feels truly sticky */
+@media (max-width: 768px) {
+  body.has-sticky-ad {
+    padding-bottom: 70px;
+  }
 }
