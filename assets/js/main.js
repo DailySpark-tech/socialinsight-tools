@@ -100,3 +100,18 @@ function initMobileHeaderAdSwap() {
     lastScrollY = currentScroll;
   });
 }
+
+
+(function () {
+  const stickyAd = document.getElementById("mobileStickyAd");
+  if (!stickyAd) return;
+
+  let shown = false;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200 && !shown) {
+      stickyAd.style.display = "block";
+      shown = true;
+    }
+  });
+})();
