@@ -110,7 +110,8 @@ function initMobileHeaderAdSwap() {
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 200 && !shown) {
-      stickyAd.style.display = "block";
+      stickyAd.classList.add("visible");
+      document.body.classList.add("has-sticky-ad");
       shown = true;
     }
   });
