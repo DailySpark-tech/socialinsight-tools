@@ -121,7 +121,7 @@ const progressInterval = setInterval(() => {
         These results are estimation-based and derived from publicly observable
         interaction patterns and engagement trends.
       </p>
-      <div class="ad-container tool-ad tool-ad-secondary desktop-only">
+      <div class="ad-container tool-ad tool-ad-secondary">
   <div class="ad-placeholder">After result box Ad</div>
 </div>
     `;
