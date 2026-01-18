@@ -101,18 +101,3 @@ function initMobileHeaderAdSwap() {
   });
 }
 
-
-(function () {
-  const stickyAd = document.getElementById("mobileStickyAd");
-  if (!stickyAd) return;
-
-  let shown = false;
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 200 && !shown) {
-      stickyAd.classList.add("visible");
-      document.body.classList.add("has-sticky-ad");
-      shown = true;
-    }
-  });
-})();
